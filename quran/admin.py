@@ -10,19 +10,19 @@ from .models import (
 )
 
 
-@admin.register(Part)
-class PartAdmin(admin.ModelAdmin):
-    list_display = ("number", "from_verse", "to_verse")
-
-
-@admin.register(Surah)
-class SurahAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "numbers_of_verses", "madanya_or_makya")
-
-
-@admin.register(Verse)
-class VerseAdmin(admin.ModelAdmin):
-    list_display = ("id", "text", "surah", "number")
+# @admin.register(Part)
+# class PartAdmin(admin.ModelAdmin):
+#     list_display = ("number", "from_verse", "to_verse")
+#
+#
+# @admin.register(Surah)
+# class SurahAdmin(admin.ModelAdmin):
+#     list_display = ("id", "title", "numbers_of_verses", "madanya_or_makya")
+#
+#
+# @admin.register(Verse)
+# class VerseAdmin(admin.ModelAdmin):
+#     list_display = ("id", "text", "surah", "number")
 
 
 @admin.register(Author)
