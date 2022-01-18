@@ -54,14 +54,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=255,
         unique=True,
     )
-    education = models.CharField(max_length=50, choices=EDUCATION_CHOICES)  # التعليم
-    the_outcome_of_forensic_science = models.TextField()  # حصيله العلم الشرعى
+    education = models.CharField(max_length=50, choices=EDUCATION_CHOICES, null=True, blank=True)  # التعليم
+    the_outcome_of_forensic_science = models.TextField(null=False, blank=False)  # حصيله العلم الشرعى
     birth_date = models.DateField(null=True, blank=True)
-    country = models.CharField(max_length=50)
-    amount_of_quran = models.CharField(max_length=50, choices=AMOUNT_OF_QURAN_CHOICES)  # مقدار حفظ القرأن
-    quran_number = models.IntegerField(default=0)  # عدد اجزاء القران المحفوظه
-    sex = models.CharField(max_length=6, choices=SEX_CHOICES)
-    hobby = models.TextField()
+    country = models.CharField(max_length=50, null=False, blank=False)
+    amount_of_quran = models.CharField(max_length=50, choices=AMOUNT_OF_QURAN_CHOICES, null=True, blank=True)  # مقدار حفظ القرأن
+    quran_number = models.IntegerField(default=0, null=True, blank=True)  # عدد اجزاء القران المحفوظه
+    sex = models.CharField(max_length=6, choices=SEX_CHOICES, null=True, blank=True)
+    hobby = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField('created_at', auto_now_add=True)
     updated_at = models.DateTimeField('updated_at', auto_now=True)
 
